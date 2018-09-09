@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Weather</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <link rel="stylesheet" href="css/style.css" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <link rel="shortcut icon" sizes="196x196" href="images/icon.png" />
+        <link rel="apple-touch-icon-precomposed" href="images/icon.png" />
+    </head>
+
+    <body>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+          <header class="mdl-layout__header">
+              <button onclick="location.href = 'index.html';" class="mdl-layout-icon mdl-button mdl-js-button mdl-button--icon">
+                <i class="material-icons">arrow_back</i>
+              </button>
+            <div class="mdl-layout__header-row">
+              <span class="mdl-layout-title" id="headerBarTitle">View Location</span>
+            </div>
+          </header>
+
+          <main class="mdl-layout__content">
+            <div class="content-grid mdl-grid">
+              <div class="mdl-cell">
+                <!--   Main page content here:   -->
+                  <div id="map" style="width:400px;height:400px;"></div>
+                  <script>
+                      function myMap() {
+                          var mapOptions = {
+                              center: new google.maps.LatLng(localStorage.getItem('lat'),localStorage.getItem('lon')),
+                              zoom: 10,
+                              mapTypeId: google.maps.MapTypeId.HYBRID
+                          }
+                          var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+                      }
+                      console.log(localStorage.getItem('lat')+','+localStorage.getItem('lon'))
+                  </script>
+                  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbYXRcf2zy7TXuzXZL3MJQyO8jXmDeqKk&callback=myMap"></script>
+                  <button onclick="moveLocation()">Remove location</button></br> 
+                  <input id='day' type='text' placeholder='DD' style='width:40px;height:15px'>/
+                  <input id='month' type='text' placeholder='MM' style='width:40px;height:15px'>/
+                  <input id='year' type='text' placeholder='YY' style='width:40px;height:15px'></br>
+                  <button onclick="addCheckDate()">Add</button> </br>
+              
+              <tbody id = "weather-list">
+              </tbody></br>
+    <table class="mdl-data-table mdl-shadow--2dp">
+  <thead>
+    <tr>
+      <th>Weather
+      </th>
+        <th id='weather information'></th>
+                      <th id='picture'></th>
+        </table> 
+
+        </br>
+            <table class="mdl-data-table mdl-shadow--2dp">
+  <thead>
+    <tr>
+      <th>Season
+      </th>
+        <th id='season information'></th>
+
+        </table>           
+</br>
+    <table class="mdl-data-table mdl-shadow--2dp">
+  <thead>
+    <tr>
+      <th>
+         
+      </th>
+      <th class="mdl-data-table__cell--non-numeric">Crop Name</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Season</th>
+      <th>Results</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+       <td>
+
+      </td>
+      <td id='cropname1' class="mdl-data-table__cell--non-numeric">Crop name1</td>
+      <td id='minimum1'>0</td>
+      <td id='maximum1'>100</td>
+      <td id='season1'>Season</td>
+      <td id='result1'> </td>
+    </tr>
+    <tr>
+       <td>
+
+      </td>
+      <td id='cropname2' class="mdl-data-table__cell--non-numeric">Crop name2</td>
+      <td id='minimum2'>0</td>
+      <td id='maximum2'>100</td>
+      <td id='season2'>Season</td>
+      <td id='result2'></td>
+    </tr>
+    <tr>
+      <td>
+
+      </td>
+      <td id='cropname3' class="mdl-data-table__cell--non-numeric">Crop name3</td>
+      <td id='minimum3'>0</td>
+      <td id='maximum3'>100</td>
+      <td id='season3'>Season</td>
+      <td id='result3'></td>
+    </tr>
+          <tr>
+      <td>
+
+      </td>
+      <td id='cropname4' class="mdl-data-table__cell--non-numeric">Crop name4</td>
+      <td id='minimum4'>0</td>
+      <td id='maximum4'>100</td>
+      <td id='season4'>Season</td>
+      <td id='result4'></td>
+    </tr>
+  </tbody>
+</table>     </li>
+              </div>
+            </div>
+          </main>
+        </div>
+
+        
+
+        <!--   JavaScript files:   -->
+        <script src="js/dateExtensions.js"></script>
+        <script src="js/shared.js"></script>
+        <script src="js/viewLocationPage.js"></script>
+    </body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Weather</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <link rel="stylesheet" href="css/style.css" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <link rel="shortcut icon" sizes="196x196" href="images/icon.png" />
+        <link rel="apple-touch-icon-precomposed" href="images/icon.png" />
+    </head>
+
+    <body>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+          <header class="mdl-layout__header">
+              <button onclick="location.href = 'index.html';" class="mdl-layout-icon mdl-button mdl-js-button mdl-button--icon">
+                <i class="material-icons">arrow_back</i>
+              </button>
+
+
+
+            <div class="mdl-layout__header-row">
+              <span class="mdl-layout-title" id="headerBarTitle">Add Crop</span>
+            </div>
+          </header>
+          <main class="mdl-layout__content">
+              <!-- Primary-colored flat button -->
+    <!-- Colored FAB button -->
+              <div class="content-grid mdl-grid">
+                  <div class="mdl-cell">
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label crop-input">
+                          <input class="mdl-textfield__input" type="text" id="cropname"  pattern="[0-9]*">
+                          <label class="mdl-textfield__label" for="cropname">Name</label>
+                          <span class="mdl-textfield__error">Texts only</span>
+                      </div>
+                <!--   Main page content here:   -->
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label crop-input">
+                          <select class="mdl-textfield__input" type="text" id="season">
+                              <option value="Summer">summer</option>
+                              <option value="Spring">spring</option>
+                              <option value="Winter">winter</option>
+                              <option value="Autumn">autumn</option>
+                      </select>
+                    <!-- <label class="mdl-textfield__label" for="season">Season</label> -->
+                      </div>
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label crop-input">
+                          <input class="mdl-textfield__input" type="text" id="minTemp"  pattern="[0-9]*">
+                          <label class="mdl-textfield__label" for="minTemp">Minimum(℃)</label>
+                          <span class="mdl-textfield__error">Digits only</span>
+                      </div>
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label crop-input">
+                          <input class="mdl-textfield__input" type="text" id="maxTemp"  pattern="[0-9]*">
+                          <label class="mdl-textfield__label" for="maxTemp">Maxmum(℃)</label>
+                          <span class="mdl-textfield__error">Digits only</span>
+                      </div>
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label crop-input">
+                          <input class="mdl-textfield__input" type="text" id="Offset"  pattern="[0-9]*">
+                          <label class="mdl-textfield__label" for="Offset">Low Yield Offest(℃)</label>
+                          <span class="mdl-textfield__error">Digits only</span>
+                      </div>
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label crop-input">
+                          <input class="mdl-textfield__input" type="text" id="tolerance"  pattern="[0-9]*">
+                          <label class="mdl-textfield__label" for="tolerance">Tolerance(Days)</label>
+                          <span class="mdl-textfield__error">Digits only</span>
+                      </div>
+                      <button onclick="addCrops()">Add</button> 
+                  </div>
+              </div>
+            </main>
+        </div>
+
+        <!--   JavaScript files:   -->
+        <script src="js/dateExtensions.js"></script>
+        <script src="js/shared.js"></script>
+        <script src="js/addCropPage.js"></script>
+    </body>
+</html>
